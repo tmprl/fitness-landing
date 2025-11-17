@@ -261,6 +261,14 @@ body {
     background-color: var(--color-dark);
 }
 
+a,
+button,
+input,
+textarea,
+svg * {
+    transition-duration: var(--transition-duration);
+}
+
 .container {
     max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
     margin-inline: auto;
@@ -271,6 +279,104 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     text-transform: uppercase;
 }
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    height: 38px;
+    padding-inline: 26px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 2;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    background-color: var(--color-light);
+    border: none;
+    border-radius: var(--border-radius);
+}
+
+
+.button:hover {
+    background-color: var(--color-light-gray);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.header-logo {
+    flex-shrink: 0;
+}
+
+.header-burger-button {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 4px;
+    color: var(--color-light);
+    width: 40px;
+    height: 40px;
+    padding-left: 8px;
+    background-color: transparent;
+    border: var(--border);
+    border-radius: var(--border-radius);
+}
+
+.header-burger-button:hover {
+    color: var(--color-light-gray);
+    border-color: currentColor;
+}
+
+.header-burger-button-line {
+    width: 6px;
+    height: 1px;
+    background-color: currentColor;
+    box-shadow: 16px 0px 0px currentColor;
+}
+
+.header-nav {
+    display: flex;
+    column-gap: 40px;
+}
+
+a {
+    color: var(--color-light)
+}
+
+a:hover {
+    color: var(--color-light-gray)
+}
+
+.header-menu-list {
+    display: flex;
+    column-gap: 50px;
+}
+
+.header-menu-link {
+    display: inline-flex;
+    align-items: center;
+    height: 90px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    column-gap: 7px;
+}
+
+
+.header-menu-link.is-current::after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background-color: currentColor;
+    border-radius: 50%;
+}
+
 
 
 
