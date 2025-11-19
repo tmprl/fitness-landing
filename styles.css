@@ -494,6 +494,10 @@ a:hover {
         height: 50px;
     }
 
+    .banner {
+      row-gap: 10px;
+    }
+
    
 }
 
@@ -517,7 +521,19 @@ a:hover {
     .header-nav {
         column-gap: 15px;
     }
+
+    .banner-info {
+      margin-bottom: 5px;
+    }
+
+    .banner-info::before {
+       margin-right: 10px;
 }
+}
+
+
+
+
 
 
 
