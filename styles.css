@@ -253,6 +253,8 @@ svg * {
     --container-padding-x: 15px;
 
     --transition-duration: 0.2s;
+
+    --header-height: 90px;
 }
 
 body {
@@ -320,6 +322,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-height: var(--header-height);
     column-gap: 20px;
     padding-inline: 32px;
     background-color: var(--color-dark-alternate);
@@ -378,7 +381,7 @@ a:hover {
 .header-menu-link {
     display: inline-flex;
     align-items: center;
-    height: 90px;
+    height: var(--header-height);
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 700;
@@ -401,7 +404,7 @@ a:hover {
   flex-direction: column;
   justify-content: end;
   padding: 36px 70px;
-  min-height: 985px;
+  min-height: calc(100vh - var(--header-height));
   color: var(--color-light);
   background-color: var(--color-dark-alternate);
 }
@@ -413,14 +416,14 @@ a:hover {
 .banner-info {
   display: flex;
   align-items: end;
-  font-size: 30px;
+  font-size: clamp(16px, 1.56vw, 30px);
   line-height: 1.27;
   font-weight: 700;
 }
 
 .banner-info::before {
   content: '';
-  width: 194px;
+  width: clamp(60px, 10.1vw, 194px);
   aspect-ratio: 1;
   background: url('./icons/h1-rev-icon-1.svg') center/contain no-repeat;
   margin-right: 30px;
@@ -475,7 +478,11 @@ a:hover {
         flex-wrap: wrap;
         row-gap: 10px;
         padding-top: 20px;
-        padding-inline: 15px'
+    }
+
+    .header,
+    .banner {
+      padding-inline: 15px;
     }
 
     .header-menu {
@@ -486,6 +493,8 @@ a:hover {
     .header-menu-link {
         height: 50px;
     }
+
+   
 }
 
 @media (max-width: 767px) {
