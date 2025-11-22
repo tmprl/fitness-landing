@@ -265,6 +265,40 @@ body {
     background-color: var(--color-dark);
 }
 
+.title-medium {
+  font-size: 40px;
+  line-height: 1.3;
+  color: var(--color-light);
+}
+
+.backdrop-title {
+  position: relative;
+  z-index: 2;
+}
+
+.backdrop-title::before {
+  position: absolute;
+  display: block;
+  content: '';
+  background: url('./icons/plus.svg');
+  right: calc(100% + 8px);
+  width: 26px;
+  height: 40px;
+  transform: translateY(-8%);
+}
+
+.backdrop-title::after {
+  position: absolute;
+  z-index: -1;
+  top: -50px;
+  left: -70px;
+  content: attr(data-title);
+  color: transparent;
+  font-size: 2.8em;
+  font-family: var(--font-family-accent);
+  -webkit-text-stroke: 1px var(--color-dark-gray);
+}
+
 a,
 button,
 input,
@@ -469,6 +503,29 @@ a:hover {
 
 .banner-pagination-button:not(.is-current):hover::after {
   border-color: var(--color-light-gray);
+}
+
+.motivation-item:nth-child(odd) {
+  background-color: var(--color-dark-alternate);
+}
+
+.motivation-item:nth-child(odd) .motivation-card {
+  flex-direction: row-reverse;
+}
+
+.motivation-card {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  column-gap: clamp(30px, 10.42vw, 200px);
+}
+
+.motivation-card-image {
+  margin-block: -60px;
+}
+
+.motivation-card-body {
+  padding-left: 35px;
 }
 
 
