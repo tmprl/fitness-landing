@@ -318,6 +318,14 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
 }
 
+p {
+  margin-block: 0;
+}
+
+p:not(:last-child) {
+  margin-bottom: 24px;
+}
+
 .visually-hidden {
   position: absolute !important; 
   width: 1px !important;
@@ -341,6 +349,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 2;
     letter-spacing: 1.2px;
     text-transform: uppercase;
+    text-decoration: none;
     white-space: nowrap;
     background-color: var(--color-light);
     border: none;
@@ -350,6 +359,30 @@ h1, h2, h3, h4, h5, h6 {
 
 .button:hover {
     background-color: var(--color-light-gray);
+}
+
+.button.transparent {
+  position: relative;
+  height: var(--input-height);
+  padding-right: 80px;
+  background-color: transparent;
+  border: var(--border)
+}
+
+.button.transparent::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  height: 100%;
+  aspect-ratio: 1;
+  background: url(./icons/arrow.svg) center/70% no-repeat;
+  border: var(--border);
+  border-radius: 50%;
+}
+
+.button.transparent:hover {
+  color: var(--color-dark);
+  background-color: var(--color-light-gray);  
 }
 
 .header {
@@ -528,7 +561,17 @@ a:hover {
   padding-left: 35px;
 }
 
+.motivation-card-description {
+  max-width: 400px;
+}
 
+.motivation-card-description:not(:last-child) {
+  margin-top: 14px;
+}
+
+.motivation-card-description:not(:last-child) {
+  margin-bottom: 37px;
+}
 
 @media (max-width: 1024px) {   /* header adaptive */
     .header {
